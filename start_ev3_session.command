@@ -1,6 +1,5 @@
 #!/bin/bash
 
-username=root
-ev3IP=192.168.178.28
+ev3IP=$(node -e "process.stdout.write(require('$(dirname $0)/config.json').ev3IP);")
 
-ssh "$username"@"$ev3IP"
+ssh root@"$ev3IP"

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-username=root
-ev3IP=192.168.178.28
+ev3IP=$(node -e "process.stdout.write(require('$(dirname $0)/config.json').ev3IP);")
 
 Prepare() {
     echo "#############"
@@ -22,11 +21,11 @@ Clean() {
     echo "# Cleaning #"
     echo "############"
 
-    ssh "$username"@"$ev3IP" rm -f sysroot.tar
-    ssh "$username"@"$ev3IP" rm -Rf sysroot
+    ssh root@"$ev3IP" rm -f sysroot.tar
+    ssh root@"$ev3IP" rm -Rf sysroot
 
-    ssh "$username"@"$ev3IP" rm -f node-linux-arm.tar
-    ssh "$username"@"$ev3IP" rm -Rf node-linux-arm
+    ssh root@"$ev3IP" rm -f node-linux-arm.tar
+    ssh root@"$ev3IP" rm -Rf node-linux-arm
 }
 
 Copy() {
@@ -34,8 +33,8 @@ Copy() {
     echo "# Copying #"
     echo "###########"
 
-    scp sysroot.tar "$username"@"$ev3IP":"/home/$username/sysroot.tar"
-    scp node-linux-arm.tar "$username"@"$ev3IP":"/home/$username/node-linux-arm.tar"
+    scp sysroot.tar root@"$ev3IP":"/home/root/sysroot.tar"
+    scp node-linux-arm.tar root@"$ev3IP":"/home/root/node-linux-arm.tar"
 }
 
 Install() {
@@ -43,11 +42,11 @@ Install() {
     echo "# Installing #"
     echo "##############"
 
-    ssh "$username"@"$ev3IP" tar -xvf sysroot.tar
-    ssh "$username"@"$ev3IP" cp -Rf sysroot/* /
+    ssh root@"$ev3IP" tar -xvf sysroot.tar
+    ssh root@"$ev3IP" cp -Rf sysroot/* /
 
-    ssh "$username"@"$ev3IP" tar -xvf node-linux-arm.tar
-    ssh "$username"@"$ev3IP" cp -Rf node-linux-arm/usr/* /usr
+    ssh root@"$ev3IP" tar -xvf node-linux-arm.tar
+    ssh root@"$ev3IP" cp -Rf node-linux-arm/usr/* /usr
 }
 
 Prepare
