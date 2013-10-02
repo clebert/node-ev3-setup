@@ -10,3 +10,4 @@ Setup Node.js on LEGO EV3.
 - [AM1808](http://www.ti.com/product/am1808)
 - [Ruby to build Node.js RaspberryPI](http://www.nodejs-news.com/nodejs-tech/ruby-to-build-nodejs-raspberrypi/)
 - [Writing programs for the EV3](http://www.lejos.org/forum/viewtopic.php?f=18&t=4594)
+- [Developing with leJOS](http://sourceforge.net/p/lejos/wiki/Developing%20with%20leJOS/)
