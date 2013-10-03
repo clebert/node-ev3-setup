@@ -1,6 +1,6 @@
 # node-ev3-setup
 
-Setup Node.js on LEGO EV3.
+Setup Node.js on Lego Mindstorms EV3.
 
 ## Links
 
