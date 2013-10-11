@@ -10,5 +10,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-  config.vm.provision "shell", path: "compile.sh"
+  config.vm.provision "shell", path: "compile_node.sh"
 end
