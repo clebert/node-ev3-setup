@@ -1,6 +1,8 @@
+**THIS PROJECT IS NO LONGER MAINTAINED by clebert.**
+
 # node-ev3-setup
 
-Setup Node.js on Lego Mindstorms EV3.
+> [Deprecated] Setup Node.js on Lego Mindstorms EV3.
 
 ## Links
 
